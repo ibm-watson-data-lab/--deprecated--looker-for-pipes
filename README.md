@@ -22,6 +22,7 @@ Below, you’ll find a set of files that deals with [Salesforce.com](http://www.
 3. View your data
 	* Access the SFDC dashboard by selecting _Spaces / LookML Dashboards_.
 	* Or _Explore_ your data, where your can add or subtract dimensions and measures.
+
 ##File list
 Type | File Name | Description
 ------- | -------------- | ----------------
@@ -33,6 +34,7 @@ Type | File Name | Description
 [View](http://www.looker.com/docs/reference/view-reference) | contact.view.lookml | Describes sf_contact table; used in the Looker model
 [View](http://www.looker.com/docs/reference/view-reference) | lead.view.lookml | Describes sf_lead table; used in the Looker model
 [View](http://www.looker.com/docs/reference/view-reference) | opportunity.view.lookml | Describes sf_opportunity table; used in the Looker model
+
 ##Need Assistance?
 If you have any questions about the technical implementation of Simple Data Pipe or IBM dashDB, ask us on stackoverflow using #SimpleDataPipe
 Should you choose to deploy the Simple Data Pipe sample web application, be aware that it includes code to track deployments to Bluemix and other Cloud Foundry platforms. The following information is sent to a [Deployment Tracker](https://github.com/cloudant-labs/deployment-tracker) service on each deployment:
