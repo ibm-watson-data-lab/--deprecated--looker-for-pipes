@@ -1,91 +1,90 @@
 - view: contact
-  sql_table_name: '"sf_contact"'
+  sql_table_name: 'SF_CONTACT'
   fields:
 
   - dimension: id
     primary_key: true
-    sql: ${TABLE}."Id"
+    sql: ${TABLE}.ID
 
   - dimension: _id
-    sql: ${TABLE}."_id"
+    sql: ${TABLE}._ID
 
   - dimension: _rev
-    sql: ${TABLE}."_rev"
+    sql: ${TABLE}._REV
 
   - dimension: attributes_type
-    sql: ${TABLE}."attributes_type"
+    sql: ${TABLE}.ATTRIBUTES_TYPE
 
   - dimension: attributes_url
-    sql: ${TABLE}."attributes_url"
+    sql: ${TABLE}.ATTRIBUTES_URL
 
   - dimension: created_by_id
-    sql: ${TABLE}."CreatedById"
+    sql: ${TABLE}.CREATEDBYID
 
   - dimension_group: created
     type: time
     timeframes: [date, month, week, year]
-    sql: TO_DATE(substring(${TABLE}."CreatedDate",1,10) || ' ' || substring(${TABLE}."CreatedDate",12,8),'YYYY-MM-DD HH24:MI:SS')
+    sql: TO_DATE(substring(${TABLE}.CREATEDDATE,1,10) || ' ' || substring(${TABLE}.CREATEDDATE,12,8),'YYYY-MM-DD HH24:MI:SS')
 
   - dimension: email
-    sql: ${TABLE}."Email"
+    sql: ${TABLE}.EMAIL
 
   - dimension: first_name
-    sql: ${TABLE}."FirstName"
+    sql: ${TABLE}.FIRSTNAME
 
   - dimension: geo_2
-    sql: ${TABLE}."Geo_2__c"
+    sql: ${TABLE}.GEO_2__C
 
   - dimension: geo
-    sql: ${TABLE}."Geo__c"
+    sql: ${TABLE}.GEO__C
 
   - dimension: has_opted_out_of_email
-    type: int
-    sql: ${TABLE}."HasOptedOutOfEmail"
+    type: number
+    sql: ${TABLE}.HASOPTEDOUTOFEMAIL
 
   - dimension: is_deleted
-    type: int
-    sql: ${TABLE}."IsDeleted"
+    type: number
+    sql: ${TABLE}.ISDELETED
 
   - dimension: is_email_bounced
-    type: int
-    sql: ${TABLE}."IsEmailBounced"
+    type: number
+    sql: ${TABLE}.ISEMAILBOUNCED
 
   - dimension: last_modified_by_id
-    sql: ${TABLE}."LastModifiedById"
+    sql: ${TABLE}.LASTMODIFIEDBYID
 
   - dimension: last_modified
     type: time
     timeframes: [date, month, week]
-    sql: TO_DATE(substring(${TABLE}."LastModifiedDate",1,10) || ' ' || substring(${TABLE}."LastModifiedDate",12,8),'YYYY-MM-DD HH24:MI:SS') 
+    sql: TO_DATE(substring(${TABLE}.LASTMODIFIEDDATE,1,10) || ' ' || substring(${TABLE}.LASTMODIFIEDDATE,12,8),'YYYY-MM-DD HH24:MI:SS') 
 
   - dimension: last_name
-    sql: ${TABLE}."LastName"
+    sql: ${TABLE}.LASTNAME
 
   - dimension: mailing_address_country
-    sql: ${TABLE}."MailingAddress_country"
+    sql: ${TABLE}.MAILINGADDRESS_COUNTRY
 
   - dimension: mailing_country
-    sql: ${TABLE}."MailingCountry"
+    sql: ${TABLE}.MAILINGCOUNTRY
 
   - dimension: name
-    sql: ${TABLE}."Name"
+    sql: ${TABLE}.NAME
 
   - dimension: owner_id
-    sql: ${TABLE}."OwnerId"
+    sql: ${TABLE}.OWNERID
 
   - dimension: pt_type
-    sql: ${TABLE}."pt_type"
+    sql: ${TABLE}.PT_TYPE
 
   - dimension: source_group
-    sql: ${TABLE}."Source_Group__c"
+    sql: ${TABLE}.SOURCE_GROUP__C
 
   - dimension: system_modstamp
-    sql: ${TABLE}."SystemModstamp"
+    sql: ${TABLE}.SYSTEMMODSTAMP
 
   - dimension: title
-    sql: ${TABLE}."Title"
+    sql: ${TABLE}.TITLE
 
   - measure: count
     type: count
     drill_fields: [id, first_name, last_name, name]
-
