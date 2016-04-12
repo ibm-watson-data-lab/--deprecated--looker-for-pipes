@@ -1,123 +1,124 @@
 - view: campaign
-  sql_table_name: 'SF_CAMPAIGN'
+  sql_table_name: '"sf_campaign"'
   fields:
 
   - dimension: id
     primary_key: true
-    sql: ${TABLE}.ID
+    sql: ${TABLE}."Id"
 
   - dimension: _id
-    sql: ${TABLE}._ID
+    sql: ${TABLE}."_id"
 
 #   - dimension: _rev
 #     sql: ${TABLE}._rev
 
   - dimension: actual_cost
     type: number
-    sql: ${TABLE}.ACTUALCOST
+    sql: ${TABLE}."ActualCost"
 
   - dimension: amount_all_opportunities
     type: number
-    sql: ${TABLE}.AMOUNTALLOPPORTUNITIES
+    sql: ${TABLE}."AmountAllOpportunities"
 
   - dimension: amount_won_opportunities
     type: number
-    sql: ${TABLE}.AMOUNTWONOPPORTUNITIES
+    sql: ${TABLE}."AmountWonOpportunities"
 
   - dimension: attributes_type
-    sql: ${TABLE}.ATTRIBUTES_TYPE
+    sql: ${TABLE}."attributes_type"
 
   - dimension: attributes_url
-    sql: ${TABLE}.ATTRIBUTES_URL
+    sql: ${TABLE}."attributes_url"
 
   - dimension: cost_lead
     type: number
-    sql: ${TABLE}.COST_LEAD__C
+    sql: ${TABLE}."Cost_lead__c"
 
   - dimension: created_by_id
-    sql: ${TABLE}.CREATEDBYID
+    sql: ${TABLE}."CreatedById"
 
   - dimension: created
     type: time
     timeframes: [date, month, week, year]
-    sql: TO_DATE(substring(${TABLE}.CREATEDDATE,1,10) || ' ' || substring(${TABLE}.CREATEDDATE,12,8),'YYYY-MM-DD HH24:MI:SS') 
+    sql: TO_DATE(substring(${TABLE}."CreatedDate",1,10) || ' ' || substring(${TABLE}."CreatedDate",12,8),'YYYY-MM-DD HH24:MI:SS') 
   
   - dimension: end
     type: time
     timeframes: [date, month, week, year]
-    sql: TO_DATE(substring(${TABLE}.ENDDATE,1,10) || ' ' || substring(${TABLE}.ENDDATE,12,8),'YYYY-MM-DD HH24:MI:SS') 
+    sql: TO_DATE(substring(${TABLE}."EndDate",1,10) || ' ' || substring(${TABLE}."EndDate",12,8),'YYYY-MM-DD HH24:MI:SS') 
   
   - dimension: expected_response
     type: number
-    sql: ${TABLE}.EXPECTEDRESPONSE
+    sql: ${TABLE}."ExpectedResponse"
 
   - dimension: is_active
-    type: number
-    sql: ${TABLE}.ISACTIVE
+    type: int
+    sql: ${TABLE}."IsActive"
 
   - dimension: is_deleted
-    type: number
-    sql: ${TABLE}.ISDELETED
+    type: int
+    sql: ${TABLE}."IsDeleted"
 
   - dimension: last_modified_by_id
-    sql: ${TABLE}.LASTMODIFIEDBYID
+    sql: ${TABLE}."LastModifiedById"
 
   - dimension: last_modified
     type: time
     timeframes: [date, month, week]
-    sql: TO_DATE(substring(${TABLE}.LASTMODIFIEDDATE,1,10) || ' ' || substring(${TABLE}.LASTMODIFIEDDATE,12,8),'YYYY-MM-DD HH24:MI:SS')
+    sql: TO_DATE(substring(${TABLE}."LastModifiedDate",1,10) || ' ' || substring(${TABLE}."LastModifiedDate",12,8),'YYYY-MM-DD HH24:MI:SS')
 
   - dimension: name
-    sql: ${TABLE}.NAME
+    sql: ${TABLE}."Name"
 
   - dimension: number_of_contacts
     type: number
-    sql: ${TABLE}.NUMBEROFCONTACTS
+    sql: ${TABLE}."NumberOfContacts"
 
   - dimension: number_of_converted_leads
     type: number
-    sql: ${TABLE}.NUMBEROFCONVERTEDLEADS
+    sql: ${TABLE}."NumberOfConvertedLeads"
 
   - dimension: number_of_leads
     type: number
-    sql: ${TABLE}.NUMBEROFLEADS
+    sql: ${TABLE}."NumberOfLeads"
 
   - dimension: number_of_opportunities
     type: number
-    sql: ${TABLE}.NUMBEROFOPPORTUNITIES
+    sql: ${TABLE}."NumberOfOpportunities"
 
   - dimension: number_of_responses
     type: number
-    sql: ${TABLE}.NUMBEROFRESPONSES
+    sql: ${TABLE}."NumberOfResponses"
 
   - dimension: number_of_won_opportunities
     type: number
-    sql: ${TABLE}.NUMBEROFWONOPPORTUNITIES
+    sql: ${TABLE}."NumberOfWonOpportunities"
 
   - dimension: number_sent
     type: number
-    sql: ${TABLE}.NUMBERSENT
+    sql: ${TABLE}."NumberSent"
 
   - dimension: owner_id
-    sql: ${TABLE}.OWNERID
+    sql: ${TABLE}."OwnerId"
 
   - dimension: pt_type
-    sql: ${TABLE}.PT_TYPE
+    sql: ${TABLE}."pt_type"
 
   - dimension: start_date
     type: time
     timeframes: [date, month, week, year]
-    sql: TO_DATE(substring(${TABLE}.STARTDATE,1,10) || ' ' || substring(${TABLE}.STARTDATE,12,8),'YYYY-MM-DD HH24:MI:SS') 
+    sql: TO_DATE(substring(${TABLE}."StartDate",1,10) || ' ' || substring(${TABLE}."StartDate",12,8),'YYYY-MM-DD HH24:MI:SS') 
 
   - dimension: status
-    sql: ${TABLE}.STATUS
+    sql: ${TABLE}."Status"
 
   - dimension: system_modstamp
-    sql: ${TABLE}.SYSTEMMODSTAMP
+    sql: ${TABLE}."SystemModstamp"
 
   - dimension: type
-    sql: ${TABLE}.TYPE
+    sql: ${TABLE}."Type"
 
   - measure: count
     type: count
     drill_fields: [id, name]
+

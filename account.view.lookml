@@ -1,65 +1,66 @@
 - view: account
-  sql_table_name: 'SF_ACCOUNT'
+  sql_table_name: '"sf_account"'
   fields:
 
   - dimension: id
     primary_key: true
-    sql: ${TABLE}.ID
+    sql: ${TABLE}."Id"
 
 #   - dimension: _id
 #     sql: ${TABLE}."_id"
 
   - dimension: _rev
-    sql: ${TABLE}._REV
+    sql: ${TABLE}."_rev"
 
 #   - dimension: attributes_type
 #     sql: ${TABLE}."attributes_type"
 
   - dimension: attributes_url
-    sql: ${TABLE}.ATTRIBUTES_URL
+    sql: ${TABLE}."attributes_url"
 
 #   - dimension: billing_address_country
 #     sql: ${TABLE}."BillingAddress_country"
 
   - dimension: billing_country
-    sql: CASE WHEN ${TABLE}.BILLINGCOUNTRY = 'United States' THEN 'United States of America' ELSE ${TABLE}.BILLINGCOUNTRY END
+    sql: CASE WHEN ${TABLE}."BillingCountry" = 'United States' THEN 'United States of America' ELSE ${TABLE}."BillingCountry" END
 
   - dimension: created_by_id
-    sql: ${TABLE}.CREATEDBYID
+    sql: ${TABLE}."CreatedById"
 
   - dimension_group: created
     type: time
     timeframes: [date, month, week, year]
-    sql: TO_DATE(substring(${TABLE}.CREATEDDATE,1,10) || ' ' || substring(${TABLE}.CREATEDDATE,12,8),'YYYY-MM-DD HH24:MI:SS') 
+    sql: TO_DATE(substring(${TABLE}."CreatedDate",1,10) || ' ' || substring(${TABLE}."CreatedDate",12,8),'YYYY-MM-DD HH24:MI:SS') 
 
   - dimension: is_deleted
-    type: number
-    sql: ${TABLE}.ISDELETED
+    type: int
+    sql: ${TABLE}."IsDeleted"
 
   - dimension: last_modified_by_id
-    sql: ${TABLE}.LASTMODIFIEDBYID
+    sql: ${TABLE}."LastModifiedById"
 
   - dimension: last_modified
     type: time
     timeframes: [date, month, week]
-    sql: TO_DATE(substring(${TABLE}.LASTMODIFIEDDATE,1,10) || ' ' || substring(${TABLE}.LASTMODIFIEDDATE,12,8),'YYYY-MM-DD HH24:MI:SS') 
+    sql: TO_DATE(substring(${TABLE}."LastModifiedDate",1,10) || ' ' || substring(${TABLE}."LastModifiedDate",12,8),'YYYY-MM-DD HH24:MI:SS') 
 
   - dimension: name
-    sql: ${TABLE}.NAME
+    sql: ${TABLE}."Name"
 
   - dimension: owner_id
-    sql: ${TABLE}.OWNERID
+    sql: ${TABLE}."OwnerId"
 
 #   - dimension: pt_type
 #     sql: ${TABLE}."pt_type"
 
   - dimension: system_modstamp
-    sql: ${TABLE}.SYSTEMMODSTAMP
+    sql: ${TABLE}."SystemModstamp"
 
   - dimension: total_number_of_nodes
     type: number
-    sql: ${TABLE}.TOTAL_NUMBER_OF_NODES__C
+    sql: ${TABLE}."Total_number_of_nodes__c"
 
   - measure: count
     type: count
     drill_fields: [id, name]
+

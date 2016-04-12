@@ -1,76 +1,78 @@
 - view: campaign_member
-  sql_table_name: 'SF_CAMPAIGNMEMBER'
+  sql_table_name: '"sf_campaignmember"'
   fields:
 
   - dimension: id
     primary_key: true
-    sql: ${TABLE}.ID
+    sql: ${TABLE}."Id"
 
   - dimension: _id
-    sql: ${TABLE}._ID
+    sql: ${TABLE}."_id"
 
 #   - dimension: _rev
 #     sql: ${TABLE}."_rev"
 
   - dimension: attributes_type
-    sql: ${TABLE}.ATTRIBUTES_TYPE
+    sql: ${TABLE}."attributes_type"
 
   - dimension: attributes_url
-    sql: ${TABLE}.ATTRIBUTES_URL
+    sql: ${TABLE}."attributes_url"
 
   - dimension: campaign_id
-    sql: ${TABLE}.CAMPAIGNID
+    sql: ${TABLE}."CampaignId"
 
   - dimension: created_by_id
-    sql: ${TABLE}.CREATEDBYID
+    sql: ${TABLE}."CreatedById"
 
   - dimension: created
     type: time
     timeframes: [date, month, week, year]
-    sql: TO_DATE(substring(${TABLE}.CREATEDDATE,1,10) || ' ' || substring(${TABLE}.CREATEDDATE,12,8),'YYYY-MM-DD HH24:MI:SS') 
+    sql: TO_DATE(substring(${TABLE}."CreatedDate",1,10) || ' ' || substring(${TABLE}."CreatedDate",12,8),'YYYY-MM-DD HH24:MI:SS') 
 
   - dimension: first_responded
     type: time
     timeframes: [date, month, week, year]
-    sql: TO_DATE(substring(${TABLE}.FIRSTRESPONDEDDATE,1,10) || ' ' || substring(${TABLE}.FIRSTRESPONDEDDATE,12,8),'YYYY-MM-DD HH24:MI:SS') 
+    sql: TO_DATE(substring(${TABLE}."FirstRespondedDate",1,10) || ' ' || substring(${TABLE}."FirstRespondedDate",12,8),'YYYY-MM-DD HH24:MI:SS') 
 
   - dimension: geo
-    sql: ${TABLE}.GEO__C
+    sql: ${TABLE}."Geo__c"
 
   - dimension: has_responded
-    type: number
-    sql: ${TABLE}.HASRESPONDED
+    type: int
+    sql: ${TABLE}."HasResponded"
 
   - dimension: is_deleted
-    type: number
-    sql: ${TABLE}.ISDELETED
+    type: int
+    sql: ${TABLE}."IsDeleted"
 
   - dimension: last_modified_by_id
-    sql: ${TABLE}.LASTMODIFIEDBYID
+    sql: ${TABLE}."LastModifiedById"
 
   - dimension: last_modified
     type: time
     timeframes: [date, month, week]
-    sql: TO_DATE(substring(${TABLE}.LASTMODIFIEDDATE,1,10) || ' ' || substring(${TABLE}.LASTMODIFIEDDATE,12,8),'YYYY-MM-DD HH24:MI:SS') 
+    sql: TO_DATE(substring(${TABLE}."LastModifiedDate",1,10) || ' ' || substring(${TABLE}."LastModifiedDate",12,8),'YYYY-MM-DD HH24:MI:SS') 
+
 
   - dimension: lead_id
-    sql: ${TABLE}.LEADID
+    sql: ${TABLE}."LeadId"
 
   - dimension: net_new
-    sql: ${TABLE}.NET_NEW__C
+    sql: ${TABLE}."Net_New__c"
 
   - dimension: prospect_status
-    sql: ${TABLE}.PROSPECT_STATUS__C
+    sql: ${TABLE}."Prospect_Status__c"
 
   - dimension: pt_type
-    sql: ${TABLE}.PT_TYPE
+    sql: ${TABLE}."pt_type"
 
   - dimension: status
-    sql: ${TABLE}.STATUS
+    sql: ${TABLE}."Status"
 
   - dimension: system_modstamp
-    sql: ${TABLE}.SYSTEMMODSTAMP
+    sql: ${TABLE}."SystemModstamp"
 
   - measure: count
     type: count
     drill_fields: [id]
+

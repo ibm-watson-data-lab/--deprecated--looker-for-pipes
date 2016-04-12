@@ -1,151 +1,152 @@
 - view: lead
-  sql_table_name: 'SF_LEAD'
+  sql_table_name: '"sf_lead"'
   fields:
 
   - dimension: id
     primary_key: true
-    sql: ${TABLE}.ID
+    sql: ${TABLE}."Id"
 
   - dimension: _id
-    sql: ${TABLE}._ID
+    sql: ${TABLE}."_id"
 
 #   - dimension: _rev
 #     sql: ${TABLE}."_rev"
 
   - dimension: address_country
-    sql: ${TABLE}.ADDRESS_COUNTRY
+    sql: ${TABLE}."Address_country"
 
 #   - dimension: attributes_type
 #     sql: ${TABLE}."attributes_type"
 
   - dimension: attributes_url
-    sql: ${TABLE}.ATTRIBUTES_URL
+    sql: ${TABLE}."attributes_url"
 
   - dimension: company
-    sql: ${TABLE}.COMPANY
+    sql: ${TABLE}."Company"
 
   - dimension: converted_account_id
-    sql: ${TABLE}.CONVERTEDACCOUNTID
+    sql: ${TABLE}."ConvertedAccountId"
 
   - dimension: converted_contact_id
-    sql: ${TABLE}.CONVERTEDCONTACTID
+    sql: ${TABLE}."ConvertedContactId"
 
   - dimension: converted
-    sql: ${TABLE}.CONVERTEDDATE
+    sql: ${TABLE}."ConvertedDate"
     type: time
     timeframes: [date, month, week, year]
-    sql: TO_DATE(substring(${TABLE}.CONVERTEDDATE,1,10) || ' ' || substring(${TABLE}.CONVERTEDDATE,12,8),'YYYY-MM-DD HH24:MI:SS') 
+    sql: TO_DATE(substring(${TABLE}."ConvertedDate",1,10) || ' ' || substring(${TABLE}."ConvertedDate",12,8),'YYYY-MM-DD HH24:MI:SS') 
 
   - dimension: converted_opportunity_id
-    sql: ${TABLE}.CONVERTEDOPPORTUNITYID
+    sql: ${TABLE}."ConvertedOpportunityId"
 
   - dimension: country
-    sql: ${TABLE}.COUNTRY
+    sql: ${TABLE}."Country"
 
   - dimension: created_by_id
-    sql: ${TABLE}.CREATEDBYID
+    sql: ${TABLE}."CreatedById"
 
   - dimension: created
     type: time
     timeframes: [date, month, week, year]
-    sql: TO_DATE(substring(${TABLE}.CREATEDDATE,1,10) || ' ' || substring(${TABLE}.CREATEDDATE,12,8),'YYYY-MM-DD HH24:MI:SS') 
+    sql: TO_DATE(substring(${TABLE}."CreatedDate",1,10) || ' ' || substring(${TABLE}."CreatedDate",12,8),'YYYY-MM-DD HH24:MI:SS') 
 
   - dimension: created_vs_handoff
-    sql: ${TABLE}.CREATED_VS_HANDOFF__C
+    sql: ${TABLE}."Created_vs_Handoff__c"
 
   - dimension: email
-    sql: ${TABLE}.EMAIL
+    sql: ${TABLE}."Email"
 
   - dimension: first_name
-    sql: ${TABLE}.FIRSTNAME
+    sql: ${TABLE}."FirstName"
 
   - dimension: geo_2
-    sql: ${TABLE}.GEO_2__C
+    sql: ${TABLE}."Geo_2__c"
 
   - dimension: geo
-    sql: ${TABLE}.GEO__C
+    sql: ${TABLE}."Geo__c"
 
   - dimension: has_opted_out_of_email
-    type: number
-    sql: ${TABLE}.HASOPTEDOUTOFEMAIL
+    type: int
+    sql: ${TABLE}."HasOptedOutOfEmail"
 
   - dimension: is_converted
-    type: number
-    sql: ${TABLE}.ISCONVERTED
+    type: int
+    sql: ${TABLE}."IsConverted"
 
   - dimension: is_deleted
-    type: number
-    sql: ${TABLE}.ISDELETED
+    type: int
+    sql: ${TABLE}."IsDeleted"
 
   - dimension: is_unread_by_owner
-    type: number
-    sql: ${TABLE}.ISUNREADBYOWNER
+    type: int
+    sql: ${TABLE}."IsUnreadByOwner"
   
   - dimension: last_modified_by_id
-    sql: ${TABLE}.LASTMODIFIEDBYID
+    sql: ${TABLE}."LastModifiedById"
 
   - dimension: last_modified
     type: time
     timeframes: [date, month, week]
-    sql: TO_DATE(substring(${TABLE}.LASTMODIFIEDDATE,1,10) || ' ' || substring(${TABLE}.LASTMODIFIEDDATE,12,8),'YYYY-MM-DD HH24:MI:SS') 
+    sql: TO_DATE(substring(${TABLE}."LastModifiedDate",1,10) || ' ' || substring(${TABLE}."LastModifiedDate",12,8),'YYYY-MM-DD HH24:MI:SS') 
 
   - dimension: last_name
-    sql: ${TABLE}.LASTNAME
+    sql: ${TABLE}."LastName"
 
   - dimension: lead_source
-    sql: ${TABLE}.LEADSOURCE
+    sql: ${TABLE}."LeadSource"
 
   - dimension: milestone_reporting_db
     type: number
-    sql: ${TABLE}.MILESTONE_REPORTING_DB__C
+    sql: ${TABLE}."Milestone_Reporting_DB__c"
 
   - dimension: milestone_reporting_docs
     type: number
-    sql: ${TABLE}.MILESTONE_REPORTING_DOCS__C
+    sql: ${TABLE}."Milestone_Reporting_Docs__c"
 
   - dimension: milestone_reporting_funnel_rpt
-    sql: ${TABLE}.MILESTONE_REPORTING_FUNNEL_RPT__C
+    sql: ${TABLE}."Milestone_Reporting_Funnel_Rpt__c"
 
   - dimension: milestone_reporting_funnel_sort
     type: number
-    sql: ${TABLE}.MILESTONE_REPORTING_FUNNEL_SORT__C
+    sql: ${TABLE}."Milestone_Reporting_Funnel_Sort__c"
 
   - dimension: milestone_reporting_view
     type: number
-    sql: ${TABLE}.MILESTONE_REPORTING_VIEW__C
+    sql: ${TABLE}."Milestone_Reporting_View__c"
 
   - dimension: name
-    sql: ${TABLE}.NAME
+    sql: ${TABLE}."Name"
 
   - dimension: owner_id
-    sql: ${TABLE}.OWNERID
+    sql: ${TABLE}."OwnerId"
 
   - dimension: pt_type
-    sql: ${TABLE}.PT_TYPE
+    sql: ${TABLE}."pt_type"
 
   - dimension: sales_connect_opp_number
-    sql: ${TABLE}.SALES_CONNECT_OPPNUMBER__C
+    sql: ${TABLE}."Sales_connect_OppNumber__c"
 
   - dimension: source_group
-    sql: ${TABLE}.SOURCE_GROUP__C
+    sql: ${TABLE}."Source_Group__c"
 
   - dimension: status
-    sql: ${TABLE}.STATUS
+    sql: ${TABLE}."Status"
 
   - dimension: system_modstamp
-    sql: ${TABLE}.SYSTEMMODSTAMP
+    sql: ${TABLE}."SystemModstamp"
 
   - dimension: time_to_opportunity
     type: number
-    sql: ${TABLE}.TIMETOOPPORTUNITY__C
+    sql: ${TABLE}."TimeToOpportunity__c"
 
   - dimension: title
-    sql: ${TABLE}.TITLE
+    sql: ${TABLE}."Title"
 
   - dimension: user_agent
-    type: number
-    sql: ${TABLE}.USER_AGENT__C
+    type: int
+    sql: ${TABLE}."User_Agent__c"
 
   - measure: count
     type: count
     drill_fields: [id, first_name, last_name, name]
+

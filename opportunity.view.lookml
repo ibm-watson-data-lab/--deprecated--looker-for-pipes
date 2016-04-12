@@ -1,192 +1,192 @@
 - view: opportunity
-  sql_table_name: 'SF_OPPORTUNITY'
+  sql_table_name: '"sf_opportunity"'
 
   fields:
 
   - dimension: acv
     type: number
-    sql: ${TABLE}.ACV__C
+    sql: ${TABLE}."ACV__c"
 
   - dimension: account_id
-    sql: ${TABLE}.ACCOUNTID
+    sql: ${TABLE}."AccountId"
 
   - dimension: cra_compelling_reason_to_act
-    sql: ${TABLE}.CRA_COMPELLING_REASON_TO_ACT__C
+    sql: ${TABLE}."CRA_Compelling_Reason_to_Act__c"
 
   - dimension: campaign_id
-    sql: ${TABLE}.CAMPAIGNID
+    sql: ${TABLE}."CampaignId"
 
   - dimension_group: close
-    sql: ${TABLE}.CLOSEDATE
+    sql: ${TABLE}."CloseDate"
     type: time
     timeframes: [date,week,month,year]
     convert_tz: false
     
   - dimension: contract_term
-    sql: ${TABLE}.CONTRACT_TERM__C
+    sql: ${TABLE}."Contract_Term__c"
 
   - dimension: created_by_id
-    sql: ${TABLE}.CREATEDBYID
+    sql: ${TABLE}."CreatedById"
 
   - dimension_group: created
     type: time
     timeframes: [date, month, week, year]
-    sql: TO_DATE(substring(${TABLE}.CREATEDDATE,1,10) || ' ' || substring(${TABLE}.CREATEDDATE,12,8),'YYYY-MM-DD HH24:MI:SS') 
+    sql: TO_DATE(substring(${TABLE}."CreatedDate",1,10) || ' ' || substring(${TABLE}."CreatedDate",12,8),'YYYY-MM-DD HH24:MI:SS') 
 
   - dimension: executive_sponsor
-    sql: ${TABLE}.EXECUTIVE_SPONSOR__C
+    sql: ${TABLE}."Executive_Sponsor__c"
 
   - dimension: fiscal
-    sql: ${TABLE}.FISCAL
+    sql: ${TABLE}."Fiscal"
 
   - dimension: fiscal_quarter
     type: number
-    sql: ${TABLE}.FISCALQUARTER
+    sql: ${TABLE}."FiscalQuarter"
 
   - dimension: fiscal_year
     type: number
-    sql: ${TABLE}.FISCALYEAR
+    sql: ${TABLE}."FiscalYear"
 
   - dimension: forecast_category
-    sql: ${TABLE}.FORECASTCATEGORY
+    sql: ${TABLE}."ForecastCategory"
 
   - dimension: forecast_category_name
-    sql: ${TABLE}.FORECASTCATEGORYNAME
+    sql: ${TABLE}."ForecastCategoryName"
 
   - dimension: has_opportunity_line_item
     type: number
-    sql: ${TABLE}.HASOPPORTUNITYLINEITEM
+    sql: ${TABLE}."HasOpportunityLineItem"
 
   - dimension: ibm_forecast_stage
-    sql: ${TABLE}.IBM_FORECAST_STAGE__C
+    sql: ${TABLE}."IBM_Forecast_Stage__c"
 
   - dimension: ibm_opp_id
-    sql: ${TABLE}.IBM_OPP_ID__C
+    sql: ${TABLE}."IBM_Opp_ID__c"
 
   - dimension: ibm_sales_stage
-    sql: ${TABLE}.IBM_SALES_STAGE__C
+    sql: ${TABLE}."IBM_Sales_Stage__c"
 
   - dimension: imt
-    sql: ${TABLE}.IMT__C
+    sql: ${TABLE}."IMT__c"
 
   - dimension: iot
-    sql: ${TABLE}.IOT__C
+    sql: ${TABLE}."IOT__c"
 
   - dimension: id
-    sql: ${TABLE}.ID
+    sql: ${TABLE}."Id"
     primary_key: true
 
   - dimension: is_closed
     type: number
-    sql: ${TABLE}.ISCLOSED
+    sql: ${TABLE}."IsClosed"
 
   - dimension: is_deleted
     type: number
-    sql: ${TABLE}.ISDELETED
+    sql: ${TABLE}."IsDeleted"
 
   - dimension: is_won
     type: number
-    sql: ${TABLE}.ISWON
+    sql: ${TABLE}."IsWon"
 
   - dimension: is_this_follow_on_to_poc
-    sql: ${TABLE}.IS_THIS_FOLLOW_ON_TO_POC__C
+    sql: ${TABLE}."Is_this_follow_on_to_POC__c"
 
   - dimension: last_modified_by_id
-    sql: ${TABLE}.LASTMODIFIEDBYID
+    sql: ${TABLE}."LastModifiedById"
 
   - dimension: last_modified
     type: time
     timeframes: [date, month, week]
-    sql: TO_DATE(substring(${TABLE}.LASTMODIFIEDDATE,1,10) || ' ' || substring(${TABLE}.LASTMODIFIEDDATE,12,8),'YYYY-MM-DD HH24:MI:SS')
+    sql: TO_DATE(substring(${TABLE}."LastModifiedDate",1,10) || ' ' || substring(${TABLE}."LastModifiedDate",12,8),'YYYY-MM-DD HH24:MI:SS')
 
   - dimension: lead_source
-    sql: ${TABLE}.LEADSOURCE
+    sql: ${TABLE}."LeadSource"
 
   - dimension: lead_source_group
-    sql: ${TABLE}.LEAD_SOURCE_GROUP__C
+    sql: ${TABLE}."Lead_Source_Group__c"
 
   - dimension: lifetime_expected_value
     type: number
-    sql: ${TABLE}.LIFETIME_EXPECTED_VALUE__C
+    sql: ${TABLE}."Lifetime_Expected_Value__c"
 
 #   - dimension: mrr
 #     sql: ${TABLE}."MRR__c"
 
   - dimension: name
-    sql: ${TABLE}.NAME
+    sql: ${TABLE}."Name"
 
   - dimension: new_appt
-    sql: ${TABLE}.NEW_APPT_DATE__C
+    sql: ${TABLE}."New_Appt_Date__c"
     type: time
     timeframes: [date, month, week, year]
     convert_tz: false
 
   - dimension: number_of_deals
     type: number
-    sql: ${TABLE}.NUMBER_OF_DEALS__C
+    sql: ${TABLE}."Number_of_Deals__c"
 
   - dimension: owner_id
-    sql: ${TABLE}.OWNERID
+    sql: ${TABLE}."OwnerId"
 
   - dimension: probability
     type: number
-    sql: ${TABLE}.PROBABILITY
+    sql: ${TABLE}."Probability"
 
   - dimension: probability_of_closure_cq
-    sql: ${TABLE}.PROBABILITY_OF_CLOSURE_CQ__C
+    sql: ${TABLE}."Probability_of_Closure_CQ__c"
 
   - dimension: projected_turnover_date
-    sql: ${TABLE}.PROJECTED_TURNOVER_DATE__C
+    sql: ${TABLE}."Projected_Turnover_Date__c"
 
   - dimension: revenue_type_2
-    sql: ${TABLE}.REVENUE_TYPE2__C
+    sql: ${TABLE}."Revenue_Type2__c"
 
   - dimension: signings2x
     type: number
-    sql: ${TABLE}.SIGNINGS2X__C
+    sql: ${TABLE}."Signings2x__c"
 
   - dimension: stage_name
-    sql: ${TABLE}.STAGENAME
+    sql: ${TABLE}."StageName"
 
   - dimension: steps_to_closure__c
-    sql: ${TABLE}.STEPS_TO_CLOSURE__C
+    sql: ${TABLE}."Steps_to_Closure__c"
 
   - dimension: support_plan
-    sql: ${TABLE}.SUPPORTPLAN__C
+    sql: ${TABLE}."SupportPlan__c"
 
   - dimension: support_contact1
-    sql: ${TABLE}.SUPPORT_CONTACT1__C
+    sql: ${TABLE}."Support_Contact1__c"
 
   - dimension: systemmodstamp
-    sql: ${TABLE}.SYSTEMMODSTAMP
+    sql: ${TABLE}."SystemModstamp"
 
   - dimension: total_revenue_1
     type: number
-    sql: ${TABLE}.TOTAL_REVENUE1__C
+    sql: ${TABLE}."Total_Revenue1__c"
 
   - dimension: type
-    sql: ${TABLE}.TYPE
+    sql: ${TABLE}."Type"
 
   - dimension: type_finance
-    sql: ${TABLE}.TYPE_FINANCE__C
+    sql: ${TABLE}."Type_Finance__c"
 
   - dimension: uvp_unique_value_proposition
-    sql: ${TABLE}.UVP_UNIQUE_VALUE_PROPOSITION__C
+    sql: ${TABLE}."UVP_Unique_Value_Proposition__c"
 
   - dimension: _id
-    sql: ${TABLE}._ID
+    sql: ${TABLE}."_id"
 
   - dimension: _rev
-    sql: ${TABLE}._REV
+    sql: ${TABLE}."_rev"
 
 #   - dimension: attributes_type
 #     sql: ${TABLE}."Attributes_Type"
 
   - dimension: attributes_url
-    sql: ${TABLE}.ATTRIBUTES_URL
+    sql: ${TABLE}."attributes_url"
 
   - dimension: pt_type
-    sql: ${TABLE}.PT_TYPE
+    sql: ${TABLE}."pt_type"
   
   - measure: count
     type: count
