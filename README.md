@@ -1,5 +1,7 @@
 #looker-for-pipes
 
+>**DEPRECATED:** This repository is deprecated as of March 12, 2016. Please try the new version of lookml-for-salesforce-and-dashdb at https://github.com/ibm-cds-labs/lookml-for-salesforce-and-dashdb
+
 #Overview
 
 looker-for-pipes is a set of LookML files for use with the [Simple Data Pipe](https://developer.ibm.com/clouddataservices/simple-data-pipe/) example app that deploys to the [IBM Bluemix](http://bluemix.net) platform service. The Simple Data Pipe easily moves data from different online sources into IBM’s cloud data warehouse service, [dashDB](http://dashdb.com). With data consolidated in dashDB, users can hook up their own analytics tools.
